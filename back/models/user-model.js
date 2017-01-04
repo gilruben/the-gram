@@ -19,6 +19,9 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         len: [1, 100]
       }
+    },
+    bio: {
+      type: DataTypes.STRING
     }
   }, {
     classMethods: {
