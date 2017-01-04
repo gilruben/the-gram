@@ -1,8 +1,14 @@
-# Access Code Generator
-Welcome to the Access Code Generator! This is a scaffolding built using Node, Express, React, and Sequelize.
+# Instagram Clone
 
 ## Database Setup
-You'll first need to setup a database for the project. Then, in the `back/env/development.js` file you'll need to change the 'DATABASE_URI' to your specific database setup.
+In the config folder, create a file named config.json. Then, copy the contents
+of the configDemo.json file, and paste it into the config.json file you created.
+
+Also, change the "username", "database", and "dialect" fields in the config.json
+file. Username should be your username for the database, database should be
+called "instagram-clone", and dialect should be "postgres".
+
+Change the fields for development, test, and production
 
 ## Start
 First: `npm install`

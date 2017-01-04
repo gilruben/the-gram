@@ -1,8 +1,8 @@
 const app = require('./back/server');
-const sequelizeConnection = require('./back/db');
+const sequelize = require('./back/models').sequelize;
 const environmentVariables = require('./back/env');
 
-sequelizeConnection
+sequelize
 .authenticate()
 .then(() => {
   //this if statement will prevent our express server and test server (using supertest) from trying to access the same port at the same time

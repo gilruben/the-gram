@@ -1,7 +1,7 @@
 var expect = require('chai').expect;
 var supertest = require('supertest');
 var server = require('../back/server');
-var User = require('../back/db/models').User;
+var User = require('../back/models').user;
 
 describe('Demo tests', () => {
   //fake user data that we'll use for tests
