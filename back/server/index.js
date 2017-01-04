@@ -2,10 +2,11 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const applyExpressMiddleware = require('./middleware');
-const routes = require('./routes');
+const db = require('../models');
+//const routes = require('./routes');
 
 applyExpressMiddleware(app);
-app.use('/api', routes);
+//app.use('/api', routes);
 
 db.sequelize.sync(() => {
 	//return our react app for all non-API routes
