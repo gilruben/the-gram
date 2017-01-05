@@ -28,6 +28,7 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         User.hasMany(models.post);
         User.hasMany(models.like);
+        User.hasMany(models.comment);
 
       }
     }
