@@ -2,8 +2,6 @@ const router = require('express').Router();
 const User = require('../models').user;
 const Post = require('../models').post;
 
-//Create GET and POST route to retrieve and create posts
-//Create GET route to retrieve a specific user's posts
 
 const getAllPosts = (req, res) => {
 	Post.findAll()
@@ -17,12 +15,6 @@ const getAllPosts = (req, res) => {
 }
 
 const createPost = (req, res) => {
-	// Post.create({
-	// 		img_path: req.body.img_path,
-	// 		caption: req.body.caption,
-	// 		userId: req.body.userId
-	// 	}) 
-	//The front-end form is already like that ^ thus the data is all under req.body
 	Post.create(req.body)
 	.then( (data) => {
 		console.log("SUCCESS! posted new photo")
@@ -49,7 +41,7 @@ const getUserPosts = (req, res) => {
 }
 
 
-//current URL is /api/posts
+//URL is /api/posts
 router.route('/')
 	.get(getAllPosts)
 	.post(createPost)
