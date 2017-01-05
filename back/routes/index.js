@@ -5,9 +5,9 @@
 //const follow = require('./follow-router');
 
 module.exports = {
-  //user: user,
-  //post: post,
-  //like: like,
-  //comment: comment,
-  //follow: follow
+  //user,
+  //post,
+  //like,
+  //comment,
+  //follow
 }

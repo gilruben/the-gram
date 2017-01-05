@@ -1,7 +1,7 @@
 {
-  "name": "access-code-generator",
+  "name": "instagram-clone",
   "version": "0.1.0",
-  "description": "Scaffolding for React, Node, Express, Sequelize projects",
+  "description": "An instagram clone built with React, Node, Express, & Sequelize",
   "main": "start.js",
   "scripts": {
     "start": "npm test & webpack --watch & nodemon start.js",

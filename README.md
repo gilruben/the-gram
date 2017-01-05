@@ -23,6 +23,9 @@ To test: `npm test`
 
 Your tests are also automatically called as part of `npm start`
 
+## Seeding
+To seed the database, go into the instagram-clone directory and then enter `bash ./seed.sh` into the terminal
+
 ## Authentication
 Authentication (aka login) is mostly setup, but still missing a couple key parts: a `login` and `auth` route in your API. You will need to create them in order for login to fully work.
 
