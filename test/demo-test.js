@@ -10,6 +10,7 @@ describe('Demo tests', () => {
     {username: 'test2', email: 'test2@gmail.com', password: 'pass2'},
     {username: 'test3', email: 'test3@gmail.com', password: 'pass3'},
   ];
+
   //you can use 'before' to seed your database with data before your tests
   //you only need one 'before' statement
   //theres also a 'beforeEach' method if you want a function to run before each of your tests, individually
