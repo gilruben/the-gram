@@ -3,7 +3,7 @@ var supertest = require('supertest');
 var server = require('../back/server');
 var Comment = require('../back/models').comment;
 
-describe('comment tests', () => {
+describe('Comment tests', () => {
   //fake comment data that we'll use for tests
   var comments = [
     {comment: 'This is the first comment', userId: 1, postId: 1}
@@ -20,9 +20,9 @@ describe('comment tests', () => {
   });
 
   //example of how to do a test to get all users route
-  it(`'/comments' should respond with all comments`, (done) => {
+  it(`'/api/comments' should respond with all comments`, (done) => {
     supertest(server)
-      .get('/comments')
+      .get('/api/comments')
       .end((err, res) => {
         expect(res.body.length).equal(3);
         expect(res.body[0].comment).equal(comments[0].comment);
@@ -32,9 +32,9 @@ describe('comment tests', () => {
       })
   });
 
-  it(`'/comments' should respond with created comment`, (done) => {
+  it(`'/api/comments' should respond with created comment`, (done) => {
     supertest(server)
-      .post('/comments')
+      .post('/api/comments')
       .send(newComment)
       .end((err, res) => {
         expect(res.body.comment).equal(newComment.comment);
@@ -44,9 +44,9 @@ describe('comment tests', () => {
       })
   });
 
-  it(`'/comments/post should respond with comments on specific post'`, (done) => {
+  it(`'/api/comments/post/:postId' should respond with comments on specific post`, (done) => {
     supertest(server)
-    .get('/comments/post/2')
+    .get('/api/comments/post/2')
     .end((err, res) => {
       expect(res.body[0].comment.equal(comments[1].comment));
       expect(res.body[1].comment.equal(comments[2].comment));
@@ -54,9 +54,9 @@ describe('comment tests', () => {
     })
   });
 
-  it(`'/comments/post should respond with comments by specific user'`, (done) => {
+  it(`'/api/comments/post should respond with comments by specific user'`, (done) => {
     supertest(server)
-    .get('/comments/user/2')
+    .get('/api/comments/user/2')
     .end((err, res) => {
       expect(res.body[0].comment.equal(comments[1].comment));
       done();
