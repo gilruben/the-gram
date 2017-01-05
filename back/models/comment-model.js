@@ -3,7 +3,7 @@
 module.exports = function(sequelize, DataTypes){
   const Comment = sequelize.define("comment", {
     comment: DataTypes.STRING
-},
+  },
   {
     classMethods: {
       associate: function(models){
