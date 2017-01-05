@@ -1,13 +1,10 @@
-//const user = require('./user-router');
-//const post = require('./post-router');
-//const like = require('./like-router');
-//const comment = require('./comment-router');
-//const follow = require('./follow-router');
+const router = require('express').Router();
 
-module.exports = {
-  //user,
-  //post,
-  //like,
-  //comment,
-  //follow
-}
+// router.use('/users', require('./user-router'));
+// router.use('/posts', require('./post-router'));
+// router.use('/likes', require('./like-router'));
+// router.use('/comment', require('./comment-router'));
+// router.use('/follow', require('./follow-router'));
+
+
+module.exports = router;
