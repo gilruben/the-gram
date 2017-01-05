@@ -11,7 +11,7 @@ describe('Comment tests', () => {
     {comment: 'This is the third comment', userId: 3, postId: 2}
   ];
 
-  var newComment = [{comment: 'This is a new comment', userId: 3, postId: 3}]
+  var newComment = {comment: 'This is a new comment', userId: 3, postId: 3}
 
   before(() => {
     return Comment.sync({force: true})
