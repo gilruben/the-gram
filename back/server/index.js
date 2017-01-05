@@ -9,11 +9,7 @@ applyExpressMiddleware(app);
 
 db.sequelize.sync(() => {
 	//API routes
-	//app.use('/api/users', routes.user);
-	//app.use('/api/posts', routes.post);
-	//app.use('/api/comments', routes.comment);
-	//app.use('/api/likes', routes.like);
-	//app.use('/api/follows', routes.follow);
+	//app.use('/api', routes)
 
 	//return our react app for all non-API routes
 	app.get('/*', (req, res) => {
