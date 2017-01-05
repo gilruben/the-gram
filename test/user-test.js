@@ -13,7 +13,7 @@ describe('User API tests', () => {
     {username: 'dsterling', email: 'dsterling@gmail.com', password: 'password', bio: 'I\'m THAT girl'}
   ];
 
-  
+
   before(() => {
     return User.sync({force: true})
     .then(() => User.bulkCreate(users))
@@ -43,6 +43,21 @@ describe('User API tests', () => {
         expect(res.body.email).equal(newUser.email);
         expect(res.body.password).equal(newUser.password);
         expect(res.body.bio).equal(newUser.bio);
+
+        done();
+      })
+  });
+
+  //Test to get a specific user
+  xit(`'/api/users/:userId' should respond the user created`, (done) => {
+    supertest(server)
+      .get('/api/users/1')
+      .end((err, res) => {
+        expect(res.body.id).equal(1);
+        expect(res.body.username).equal(user[0].username);
+        expect(res.body.email).equal(user[0].email);
+        expect(res.body.password).equal(user[0].password);
+        expect(res.body.bio).equal(user[0].bio);
 
         done();
       })
