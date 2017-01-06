@@ -60,6 +60,8 @@ router.route('/')
 
 router.route('/user/:userId')
   .get(getUserComments)
+
+router.route('/post/:postId')  
   .get(getPostComments)
 
 module.exports = router;
