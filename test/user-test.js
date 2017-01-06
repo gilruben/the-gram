@@ -3,8 +3,7 @@ var supertest = require('supertest');
 var server = require('../back/server');
 var User = require('../back/models').user;
 
-describe('User API tests', () => {
-  var newUser = {username: 'rgil', email: 'rgil@gmail.com', password: 'password', bio: 'Lover of cake'}
+describe('user-api', () => {
 
   //fake user data that we'll use for tests
   var users = [
@@ -21,7 +20,7 @@ describe('User API tests', () => {
   });
 
   //Test to get all users route
-  xit(`'/api/users' should respond with all users`, (done) => {
+  it(`'/api/users' should respond with all users`, (done) => {
     supertest(server)
       .get('/api/users')
       .end((err, res) => {
@@ -34,7 +33,9 @@ describe('User API tests', () => {
   });
 
   //Test to create a new user
-  xit(`'/api/users' should respond the user created`, (done) => {
+  it(`'/api/users' should respond with the user created`, (done) => {
+    var newUser = {username: 'rgil', email: 'rgil@gmail.com', password: 'password', bio: 'Lover of cake'}
+
     supertest(server)
       .post('/api/users')
       .send(newUser)
@@ -49,15 +50,15 @@ describe('User API tests', () => {
   });
 
   //Test to get a specific user
-  xit(`'/api/users/:userId' should respond the user created`, (done) => {
+  it(`'/api/users/:userId' should respond with a specific user`, (done) => {
     supertest(server)
       .get('/api/users/1')
       .end((err, res) => {
         expect(res.body.id).equal(1);
-        expect(res.body.username).equal(user[0].username);
-        expect(res.body.email).equal(user[0].email);
-        expect(res.body.password).equal(user[0].password);
-        expect(res.body.bio).equal(user[0].bio);
+        expect(res.body.username).equal(users[0].username);
+        expect(res.body.email).equal(users[0].email);
+        expect(res.body.password).equal(users[0].password);
+        expect(res.body.bio).equal(users[0].bio);
 
         done();
       })

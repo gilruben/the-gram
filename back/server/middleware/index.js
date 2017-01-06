@@ -6,6 +6,7 @@ const path = require('path');
 const applyExpressMiddleware = (app) => {
   //body-parser middleware adds .body property to req (if we make a POST AJAX request with some data attached, that data will be accessible as req.body)
   app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser.json());
   app.use(express.static(path.join(__dirname, '../../../','/front/bundle')));
 };
 

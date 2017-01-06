@@ -4,7 +4,7 @@
   "description": "An instagram clone built with React, Node, Express, & Sequelize",
   "main": "start.js",
   "scripts": {
-    "start": "npm test & webpack --watch & nodemon start.js",
+    "start": "webpack --watch & nodemon start.js",
     "test": "mocha --watch"
   },
   "keywords": [],
