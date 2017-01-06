@@ -3,7 +3,7 @@ var supertest = require('supertest');
 var server = require('../back/server');
 var User = require('../back/models').user;
 
-describe('user-api', () => {
+describe('user-api-test', () => {
 
   //fake user data that we'll use for tests
   var users = [

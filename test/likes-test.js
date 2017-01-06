@@ -3,7 +3,7 @@ var supertest = require('supertest');
 var server = require('../back/server');
 var Like = require('../back/models').like;
 
-describe('Like test', () => {
+describe('like-api-test', () => {
   var likes = [
     {userId: 1, postId: 1},
     {userId: 2, postId: 2},
@@ -19,7 +19,7 @@ describe('Like test', () => {
   });
 
   //Test to get all likes
-  xit(`'/api/likes' should respond with all likes`, (done) => {
+  it(`'/api/likes' should respond with all likes`, (done) => {
     supertest(server)
       .get('/api/likes')
       .end((err,res) => {
@@ -29,26 +29,25 @@ describe('Like test', () => {
         expect(res.body[2].userId).eql(likes[2].userId);
         expect(res.body[0].postId).eql(likes[0].postId);
         expect(res.body[1].postId).eql(likes[1].postId);
-        expect(res.body[1].postId).eql(likes[2].postId);
+        expect(res.body[2].postId).eql(likes[2].postId);
         done();
       })
   });
 
   //Test to create likes
-  xit(`'/api/likes' should respond with created likes`, (done) => {
+  it(`'/api/likes' should respond with created likes`, (done) => {
     supertest(server)
       .post('/api/likes')
       .send(newLike)
       .end((err,res) => {
-        expect(res.body.length).equal(1);
-        expect(res.body.userId).eql(newLikes.userId);
-        expect(res.body.postId).eql(newLikes.postId);
+        expect(res.body.userId).eql(newLike.userId);
+        expect(res.body.postId).eql(newLike.postId);
         done();
       })
   });
 
   //Test to get a specific user's likes
-  xit(`'/api/likes/user/2' should respond with a specific user like`, (done) => {
+  it(`'/api/likes/user/:userId' should respond with a specific user like`, (done) => {
     supertest(server)
       .get('/api/likes/user/2')
       .end((err,res) => {
@@ -58,7 +57,7 @@ describe('Like test', () => {
   });
 
   //Test to get a specific post's likes
-  xit(`'/api/likes/post/3' should respond with a specific post like`, (done) => {
+  it(`'/api/likes/post/:postId' should respond with a specific post like`, (done) => {
     supertest(server)
       .get('/api/likes/post/3')
       .end((err,res) => {

@@ -3,7 +3,7 @@ var supertest = require('supertest');
 var server = require('../back/server');
 var Post = require('../back/models').post;
 
-describe('post-api', () => {
+describe('post-api-test', () => {
   //fake user data that we'll use for tests
   var posts = [
     {img_path: 'https://unsplash.com/?photo=NDuPLKYRXQU', caption: 'looks like cake', userId: 4},

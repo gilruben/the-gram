@@ -3,7 +3,7 @@ var supertest = require('supertest');
 var server = require('../back/server');
 var Comment = require('../back/models').comment;
 
-describe('Comment tests', () => {
+describe('comment-api-test', () => {
   //fake comment data that we'll use for tests
   var comments = [
     {comment: 'This is the first comment', userId: 1, postId: 1},
@@ -20,7 +20,7 @@ describe('Comment tests', () => {
   });
 
   //example of how to do a test to get all users route
-  xit(`'/api/comments' should respond with all comments`, (done) => {
+  it(`'/api/comments' should respond with all comments`, (done) => {
     supertest(server)
       .get('/api/comments')
       .end((err, res) => {
@@ -32,7 +32,7 @@ describe('Comment tests', () => {
       })
   });
 
-  xit(`'/api/comments' should respond with created comment`, (done) => {
+  it(`'/api/comments' should respond with created comment`, (done) => {
     supertest(server)
       .post('/api/comments')
       .send(newComment)
@@ -44,21 +44,21 @@ describe('Comment tests', () => {
       })
   });
 
-  xit(`'/api/comments/post/:postId' should respond with comments on specific post`, (done) => {
+  it(`'/api/comments/post/:postId' should respond with comments on specific post`, (done) => {
     supertest(server)
     .get('/api/comments/post/2')
     .end((err, res) => {
-      expect(res.body[0].comment.equal(comments[1].comment));
-      expect(res.body[1].comment.equal(comments[2].comment));
+      expect(res.body[0].comment).equal(comments[1].comment);
+      expect(res.body[1].comment).equal(comments[2].comment);
       done();
     })
   });
 
-  xit(`'/api/comments/post' should respond with comments by specific user`, (done) => {
+  it(`'/api/comments/post' should respond with comments by specific user`, (done) => {
     supertest(server)
     .get('/api/comments/user/2')
     .end((err, res) => {
-      expect(res.body[0].comment.equal(comments[1].comment));
+      expect(res.body[0].comment).equal(comments[1].comment);
       done();
     })
   });

@@ -10,6 +10,7 @@ const Comment = require('../models').comment;
 const getAllComments = (req, res) => {
   Comment.findAll()
   .then((data) => {
+    console.log('DATA:', data)
     res.send(data)
   })
   .catch((err) => {
@@ -61,7 +62,7 @@ router.route('/')
 router.route('/user/:userId')
   .get(getUserComments)
 
-router.route('/post/:postId')  
+router.route('/post/:postId')
   .get(getPostComments)
 
 module.exports = router;

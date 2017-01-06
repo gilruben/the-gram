@@ -1,27 +1,28 @@
 const router = require('express').Router();
 const Post = require('../models').post;
 const Like = require('../models').like;
+const User = require('../models').user;
 
 const getLikes = (req, res) => {
-  Likes.findAll()
+  Like.findAll()
   .then((data) => {
     res.send(data)
   })
   .catch((err) => {
     console.log('ERROR, UNABLE TO GET LIKES:', err)
     res.sendStatus(500)
-  }
+  })
 }
 
 const createLikes = (req, res) => {
-  Likes.create(req.body)
+  Like.create(req.body)
   .then((data) => {
     res.send(data)
   })
   .catch((err) => {
     console.log('ERROR, UNABLE TO CREATE LIKE:', err)
     res.sendStatus(500)
-  }
+  })
 }
 
 const getUserLikes = (req, res) => {
