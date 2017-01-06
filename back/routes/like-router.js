@@ -8,7 +8,7 @@ const getLikes = (req, res) => {
     res.send(data)
   })
   .catch((err) => {
-    console.log('ERROR, unable to like posts:', err)
+    console.log('ERROR, UNABLE TO GET LIKES:', err)
     res.sendStatus(500)
   }
 }
@@ -19,7 +19,7 @@ const createLikes = (req, res) => {
     res.send(data)
   })
   .catch((err) => {
-    console.log('ERROR, unable to create a like :', err)
+    console.log('ERROR, UNABLE TO CREATE LIKES:', err)
     res.sendStatus(500)
   }
 }
@@ -33,10 +33,11 @@ const getUserLikes = (req, res) => {
     res.send(data);
   })
   .catch((err) => {
-    console.log('ERROR, unable to get user likes', err)
+    console.log('ERROR, UNABLE TO GET USER\'S LIKES:', err)
     res.sendStatus(500)
   })
 }
+
 //Create GET route to retrieve a specific user's likes
 const getPostLikes = (req, res) => {
   Post.findById(req.params.postId)
@@ -47,7 +48,7 @@ const getPostLikes = (req, res) => {
     res.send(likes);
   })
   .catch ((err) => {
-    console.log('ERROR, unable to get likes posted:', err)
+    console.log('ERROR, UNABLE T0 GET POST\'S LIKES:', err)
     res.sendStatus(500)
   })
 }
