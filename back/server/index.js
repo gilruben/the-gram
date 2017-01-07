@@ -11,6 +11,9 @@ applyExpressMiddleware(app);
 //API routes
 app.use('/api', routes)
 
+//auth routes
+app.use('/auth', require('../routes/auth-router'));
+
 
 //return our react app for all non-API routes
 app.get('/*', (req, res) => {
