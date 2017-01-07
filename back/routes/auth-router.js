@@ -8,7 +8,7 @@ const login = (req, res) => {
       req.session.username = user.username;
       req.session.save;
 
-      res.send({username: user.username, email: user.email, bio: user.bio});
+      res.send({id: user.id, username: user.username, email: user.email, bio: user.bio});
     } else {
       res.sendStatus(401);
     }
