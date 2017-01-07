@@ -36,6 +36,6 @@ router.route('/logout')
   .post(logout)
 
 router.route('/verify')
-  .post(verfiy)
+  .post(verify)
 
 module.exports = router;
