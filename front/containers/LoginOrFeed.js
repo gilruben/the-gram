@@ -1,22 +1,19 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import Login from '../components/login/Login';
-import App from '../components/app/App';
+import {Navbar, Login} from '../components/index';
 import {loginAsync} from '../actions/login-actions';
 
 //Displays Login component if user is not logged in, else displays the
 //user's post feed
-const LoginOrFeed = (props) => {
-  console.log('logged in:', (props.isVerified))
-
-  return (props.isVerified || props.params.username) ?
-           <div>
-             <App />
-             {props.children}
-           </div> :
-           <Login loginMsg={props.loginMsg} log_in={props.log_in} />
-}
+const LoginOrFeed = (props) => (
+  (props.isVerified || props.params.username) ?
+    <div>
+      <Navbar items={[{text: 'Home', url: '/'}, {text: 'Login', url: '/login'}]} />
+      {props.children}
+    </div> :
+    <Login loginMsg={props.loginMsg} log_in={props.log_in} />
+)
 
 const mapStateToProps = (state) => {
   let authState = state.auth;

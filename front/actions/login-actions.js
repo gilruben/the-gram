@@ -14,7 +14,6 @@ export const log_in_fail = (loginMsg) => ({
   data: loginMsg
 })
 
-
 export const loginAsync = (loginData) =>  (dispatch) => {
   $.ajax({
     url: '/auth/login',
