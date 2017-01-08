@@ -1,7 +1,7 @@
 import {LOG_IN, LOG_IN_FAIL} from '../actions/login-actions';
 import {VERIFY} from '../actions/verify-actions';
 
-const defaultState = {id: null, username: '', email: '', bio: '', loginMsg: '', isVerified: false}
+const defaultState = {loginMsg: '', isVerified: false}
 
 const reducer = (state = defaultState, action) => {
   switch(action.type) {
