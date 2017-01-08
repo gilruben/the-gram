@@ -6,14 +6,7 @@ const Login = React.createClass({
     return {username: '', password: ''};
   },
   submitLoginInfo() {
-    $.ajax({
-      method: 'POST',
-      url: '/login',
-      data: this.state
-    })
-    .done((data) => {
-      console.log('received user data', data);
-    })
+    this.props.log_in(this.state);
   },
   updateUserName(event) {
     this.setState({username: event.target.value});
