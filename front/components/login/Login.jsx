@@ -15,6 +15,8 @@ const Login = React.createClass({
     this.setState({password: event.target.value});
   },
   render() {
+    let loginMsg = this.props.loginMsg;
+    
     return (
       <div>
         Username:
@@ -22,6 +24,7 @@ const Login = React.createClass({
         Password:
         <input onChange={this.updatePassword} type="text"/>
         <button onClick={this.submitLoginInfo}>Submit</button>
+        <div>{loginMsg ? loginMsg : null}</div>
       </div>
     )
   }

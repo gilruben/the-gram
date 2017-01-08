@@ -1,10 +1,10 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import Login from '../components/login/Login';
-import loginAsync from '../actions/login-actions';
+import {loginAsync} from '../actions/login-actions';
 
 const mapStateToProps = (state) => {
-  return {loginMsg: state.loginMsg}
+  return {loginMsg: state.auth.loginMsg}
 }
 
 const mapDispatchToProps = (dispatch) => {
