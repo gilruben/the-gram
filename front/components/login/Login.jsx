@@ -1,5 +1,5 @@
 import React from 'react';
-import $ from 'jQuery';
+import $ from 'jquery';
 
 const Login = React.createClass({
   getInitialState() {

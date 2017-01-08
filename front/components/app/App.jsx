@@ -1,5 +1,5 @@
 import React from 'react';
-import $ from 'jQuery';
+import $ from 'jquery';
 import {Navbar} from '../index';
 
 const App = React.createClass({
