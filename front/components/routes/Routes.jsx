@@ -4,13 +4,14 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import {App, Home} from '../index';
 import LoginContainer from '../../containers/LoginContainer';
 import store from '../../store/store';
+import {verify, verifySignedIn} from '../../route-utils';
 
 const Routes = (props) => (
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path='/' component={App}>
+      <Route path='/login' component={LoginContainer} onEnter={verifySignedIn} />
+      <Route path='/' component={App} onEnter={verify}>
         <IndexRoute component={Home} />
-        <Route path='/login' component={LoginContainer} />
       </Route>
     </Router>
   </Provider>
