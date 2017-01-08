@@ -21,7 +21,6 @@ const App = React.createClass({
     return (
       <div>
         <Navbar items={[{text: 'Home', url: '/'}, {text: 'Login', url: '/login'}]} />
-        {this.props.children}
       </div>
     )
   }

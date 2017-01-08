@@ -22,9 +22,8 @@ export const loginAsync = (loginData) =>  (dispatch) => {
     data: loginData
   })
   .done((data) => {
+    data = Object.assign({}, data, {isVerified: true});
     dispatch(log_in(data))
-    
-    browserHistory.push('/')
   })
   .fail(() => {
     dispatch(log_in_fail({loginMsg: 'Incorrect Username and/or Password'}))

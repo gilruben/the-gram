@@ -21,9 +21,13 @@ const logout = (req, res) => {
 }
 
 const verify = (req, res) => {
-  if(req.session.username){
+  let username = req.session.username;
+
+  if(username){
+    console.log(`${username} is AUTHORIZED`);
     res.sendStatus(200);
   } else {
+    console.log('User is NOT AUTHORIZED');
     res.sendStatus(401);
   }
 }
