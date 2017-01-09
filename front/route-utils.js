@@ -4,7 +4,6 @@ import {verify} from './actions/verify-actions';
 import {update_user_data} from './actions/user-actions';
 
 export const verifyUser = (nextState, replace, cb) => {
-  console.log(nextState);
 
   $.ajax({
     url: '/auth/verify',
