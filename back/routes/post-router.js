@@ -4,7 +4,7 @@ const Post = require('../models').post;
 
 
 const getAllPosts = (req, res) => {
-	Post.findAll()
+	Post.findAll({where: {userId: req.session.userId}})
 	.then((data) => {
 		res.send(data)
 	})
