@@ -1,19 +1,12 @@
 import React from 'react';
-import $ from 'jQuery';
+import $ from 'jquery';
 
 const Login = React.createClass({
   getInitialState() {
     return {username: '', password: ''};
   },
   submitLoginInfo() {
-    $.ajax({
-      method: 'POST',
-      url: '/login',
-      data: this.state
-    })
-    .done((data) => {
-      console.log('received user data', data);
-    })
+    this.props.log_in(this.state);
   },
   updateUserName(event) {
     this.setState({username: event.target.value});
@@ -22,6 +15,8 @@ const Login = React.createClass({
     this.setState({password: event.target.value});
   },
   render() {
+    let loginMsg = this.props.loginMsg;
+    
     return (
       <div>
         Username:
@@ -29,6 +24,7 @@ const Login = React.createClass({
         Password:
         <input onChange={this.updatePassword} type="text"/>
         <button onClick={this.submitLoginInfo}>Submit</button>
+        <div>{loginMsg ? loginMsg : null}</div>
       </div>
     )
   }

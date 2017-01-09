@@ -1,4 +1,5 @@
 const bodyParser = require('body-parser');
+const session = require('express-session');
 const express = require('express');
 const path = require('path');
 
@@ -8,6 +9,11 @@ const applyExpressMiddleware = (app) => {
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
   app.use(express.static(path.join(__dirname, '../../../','/front/bundle')));
+  app.use(session({
+    secret: 'do it for the gram',
+    resave: false,
+    saveUninitialized: false
+  }))
 };
 
 module.exports = applyExpressMiddleware;
