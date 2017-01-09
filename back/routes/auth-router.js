@@ -8,7 +8,7 @@ const login = (req, res) => {
       req.session.username = user.username;
       req.session.save;
 
-      res.send({id: user.id, username: user.username, email: user.email, bio: user.bio});
+      res.sendStatus(200);
     } else {
       res.sendStatus(401);
     }
@@ -22,10 +22,16 @@ const logout = (req, res) => {
 
 const verify = (req, res) => {
   let username = req.session.username;
+  console.log('Session username:', username)
 
   if(username){
     console.log(`${username} is AUTHORIZED`);
-    res.sendStatus(200);
+
+    User.findOne({where: {username: username}})
+    .then((user) => {
+      res.send({id: user.id, username: user.username, email: user.email, bio: user.bio});
+    })
+
   } else {
     console.log('User is NOT AUTHORIZED');
     res.sendStatus(401);

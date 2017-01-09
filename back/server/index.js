@@ -17,6 +17,7 @@ app.use('/auth', require('../routes/auth-router'));
 
 //return our react app for all non-API routes
 app.get('/*', (req, res) => {
+	console.log('SESSION:', req.session);
 	res.sendFile(path.join(__dirname, '../../', 'front/index.html'));
 });
 

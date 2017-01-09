@@ -21,7 +21,7 @@ export const loginAsync = (loginData) =>  (dispatch) => {
     data: loginData
   })
   .done((data) => {
-    dispatch(log_in({isVerified: true}))
+    dispatch(log_in({isVerified: true}));
   })
   .fail(() => {
     dispatch(log_in_fail({loginMsg: 'Incorrect Username and/or Password', isVerified: false}))
