@@ -1,7 +1,6 @@
 import $ from 'jquery';
 import store from './store/store';
 import {verify} from './actions/verify-actions';
-import {update_user_data} from './actions/user-actions';
 
 export const verifyUser = (nextState, replace, cb) => {
 
@@ -12,7 +11,6 @@ export const verifyUser = (nextState, replace, cb) => {
   .done((data) => {
 
     store.dispatch(verify({isVerified: true}));
-    store.dispatch(update_user_data(data));
     cb()
   })
   .fail(() => {
