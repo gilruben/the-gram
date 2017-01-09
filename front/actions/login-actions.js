@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import {browserHistory} from 'react-router';
 
 export const LOG_IN = 'LOG_IN';
 export const LOG_IN_FAIL = 'LOG_IN_FAIL';
@@ -22,6 +23,8 @@ export const loginAsync = (loginData) =>  (dispatch) => {
   })
   .done((data) => {
     dispatch(log_in(data))
+    
+    browserHistory.push('/')
   })
   .fail(() => {
     dispatch(log_in_fail({loginMsg: 'Incorrect Username and/or Password'}))

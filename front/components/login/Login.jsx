@@ -1,5 +1,4 @@
 import React from 'react';
-import $ from 'jquery';
 
 const Login = React.createClass({
   getInitialState() {
@@ -16,7 +15,7 @@ const Login = React.createClass({
   },
   render() {
     let loginMsg = this.props.loginMsg;
-    
+
     return (
       <div>
         Username:
