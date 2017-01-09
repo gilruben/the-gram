@@ -6,6 +6,7 @@ const login = (req, res) => {
   .then((user) => {
     if(user){
       req.session.username = user.username;
+      req.session.userId = user.id;
       req.session.save;
 
       res.sendStatus(200);
