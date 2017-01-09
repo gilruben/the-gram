@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import {browserHistory} from 'react-router';
 
 export const LOG_IN = 'LOG_IN';
 export const LOG_IN_FAIL = 'LOG_IN_FAIL';
