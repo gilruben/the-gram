@@ -9,9 +9,9 @@ import {verify, verifySignedIn} from '../../route-utils';
 const Routes = (props) => (
   <Provider store={store}>
     <Router history={browserHistory}>
-      <IndexRoute component={Home} />
       <Route path='/login' component={LoginContainer} onEnter={verifySignedIn} />
       <Route path='/' component={App} onEnter={verify}>
+        <IndexRoute component={Home} />
       </Route>
     </Router>
   </Provider>
