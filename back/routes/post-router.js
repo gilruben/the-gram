@@ -4,9 +4,15 @@ const Post = require('../models').post;
 
 
 const getAllPosts = (req, res) => {
-	Post.findAll({where: {userId: req.session.userId}})
-	.then((data) => {
-		res.send(data)
+	Post.findAll({
+		where: {userId: req.session.userId},
+		include: [{
+			model: User,
+			attributes: ['username']
+		}]
+	})
+	.then((post) => {
+		res.send(post)
 	})
 	.catch((err) => {
 		console.log("ERROR GETTING ALL POSTS:", err)
@@ -27,7 +33,12 @@ const createPost = (req, res) => {
 }
 
 const getUserPosts = (req, res) => {
-	User.findById(req.params.userId)
+	User.findById(req.params.userId, {
+		include: [{
+			model: User,
+			attributes: ['username']
+		}]
+	})
 	.then((user) => {
 		return user.getPosts()
 	})
