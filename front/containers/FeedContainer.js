@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {getPostsAsync} from '../actions/feed-actions';
+import Post from '../components/post/Post';
 
 const FeedContainer = React.createClass({
   componentDidMount(){
@@ -12,7 +13,7 @@ const FeedContainer = React.createClass({
       <ul>
         {
           this.props.posts.map((post, indx) => {
-            return <li key={indx}>{post.caption}</li>
+            return <li key={indx}> <Post post={post} /> </li>
           })
         }
       </ul>
