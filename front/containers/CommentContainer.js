@@ -3,17 +3,18 @@ import {ajax} from 'jquery';
 import IndividualComment from '../components/comment/IndividualComment';
 
 const CommentContainer = React.createClass({
-  getIntitialState() {
+  getInitialState() {
     return {
       commentList: []
     }
   },
   componentDidMount() {
     ajax({
-      url: '/api/comments/posts/' + this.props.id,
+      url: '/api/comments/post/' + this.props.id,
       type: 'GET'
     })
     .done((response) => {
+      console.log(response)
       this.setState({
         commentList: response
       })
@@ -25,7 +26,7 @@ const CommentContainer = React.createClass({
         <ul>
           {
             this.state.commentList.map((comment, idx) => {
-              return <li key={idx}><IndividualComment username={comment.user.username} content={comment.content} /></li>
+              return <li key={idx}><IndividualComment username={comment.user.username} comment={comment.comment} /></li>
             })
           }
         </ul>
