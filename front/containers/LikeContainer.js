@@ -9,10 +9,9 @@ const LikeContainer = React.createClass({
   },
   render(){
     return (
-      <ul>
+      <div>
           {this.props.likes.count}
-        }
-      </ul>
+      </div>
     )
   }
 })
