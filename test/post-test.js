@@ -6,9 +6,9 @@ var Post = require('../back/models').post;
 describe('post-api-test', () => {
   //fake user data that we'll use for tests
   var posts = [
-    {img_path: 'https://unsplash.com/?photo=NDuPLKYRXQU', caption: 'looks like cake', userId: 4},
-    {img_path: 'https://unsplash.com/?photo=w7oxd0tzWWs', caption: 'Im on a balloon!', userId: 1},
-    {img_path: 'https://unsplash.com/new?photo=btixXP1dw28', caption: 'it is LIT', userId: 1},
+    {img_path: 'https://i0.wp.com/negativespace.co/wp-content/uploads/2015/10/0093.jpg', caption: 'looks like cake', userId: 4},
+    {img_path: 'http://www.wallpaperscharlie.com/wp-content/uploads/2016/06/Hot-Air-Balloons-HD-Pictures-9.jpg', caption: 'Im on a balloon!', userId: 1},
+    {img_path: 'http://www.gratisography.com/pictures/353_1.jpg', caption: 'it is LIT', userId: 1},
   ];
 
   before(() => {
@@ -43,7 +43,7 @@ describe('post-api-test', () => {
 
   //POST a photo!
   it(`'/api/posts' should post a new photo`, (done) => {
-    let newPost = {img_path: 'https://unsplash.com/new?photo=IdjxBF_StBk', caption: 'earth is dirt', userId: 2}
+    let newPost = {img_path: 'http://www.gratisography.com/pictures/368_1.jpg', caption: 'earth is dirt', userId: 2}
     supertest(server)
       .post('/api/posts')
       .send(newPost)
