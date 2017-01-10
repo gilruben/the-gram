@@ -1,6 +1,16 @@
 const router = require('express').Router();
 const User = require('../models').user;
 
+const getOwnData = (req, res) => {
+  User.findById(req.session.id)
+  .then((user) => {
+    res.send(user);
+  })
+  .catch((err) => {
+    console.log('Error:', err)
+    res.sendStatus(500)
+  })
+}
 
 const getUsers = (req, res) => {
   User.findAll()

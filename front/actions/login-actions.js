@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import {browserHistory} from 'react-router';
 
 export const LOG_IN = 'LOG_IN';
 export const LOG_IN_FAIL = 'LOG_IN_FAIL';
@@ -14,7 +13,6 @@ export const log_in_fail = (loginMsg) => ({
   data: loginMsg
 })
 
-
 export const loginAsync = (loginData) =>  (dispatch) => {
   $.ajax({
     url: '/auth/login',
@@ -22,11 +20,9 @@ export const loginAsync = (loginData) =>  (dispatch) => {
     data: loginData
   })
   .done((data) => {
-    dispatch(log_in(data))
-    
-    browserHistory.push('/')
+    dispatch(log_in({isVerified: true}));
   })
   .fail(() => {
-    dispatch(log_in_fail({loginMsg: 'Incorrect Username and/or Password'}))
+    dispatch(log_in_fail({loginMsg: 'Incorrect Username and/or Password', isVerified: false}))
   })
 }
