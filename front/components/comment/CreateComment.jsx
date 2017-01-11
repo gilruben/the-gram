@@ -5,8 +5,9 @@ const CreateComment = (props) = (
     This is the Create comment component;
     {/* <form>
       <input type="input" placeholder="comment"></input>
-      <input type="submit"></input>
-    </form> */}
+      <button type="submit"></button>
+    </form> show the input and button horizontal*/}
+
   </div>
 )
 

@@ -6,4 +6,6 @@ import "../dee.css";
 
 import '../App.css';
 
+import '../index.css';
+
 export {Home, Login, Routes, Navbar};
