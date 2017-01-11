@@ -18,9 +18,23 @@ const CommentContainer = React.createClass({
     })
   },
   render() {
+    let poster = this.props.poster;
+    let caption = this.props.caption;
+    
+    let captionComment = (
+      <li>
+        <div className="commentBox">
+          <span className='commenters'>{poster}</span>
+            <p>{caption}</p>
+        </div>
+      </li>
+    )
+
     return (
       <div>
         <ul className='commentUl'>
+          {caption ? captionComment : null}
+          
           {
             this.state.commentList.map((comment, idx) => {
               return <li key={idx}><IndividualComment username={comment.user.username} comment={comment.comment} /></li>
