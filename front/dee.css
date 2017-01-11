@@ -1,0 +1,24 @@
+.navMid{
+  display: flex;
+  justify-content:space-between;
+  border-bottom: 1px solid grey;
+  list-style: none;
+  align-items: center;
+  height: 80px;
+  margin: 0;
+  padding-left: 0;
+}
+
+.navMid li a{
+  text-decoration: none;
+}
+
+.navMid li:nth-child(1) a {
+    color: black;
+    margin-left: 200px;
+}
+
+.navMid li:nth-child(2) a{
+    color: grey;
+    margin-right: 200px;
+}
