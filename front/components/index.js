@@ -5,4 +5,6 @@ import Navbar from './navbar/Navbar.jsx';
 import "../Navbar.css";
 import '../App.css';
 
+import '../index.css';
+
 export {Home, Login, Routes, Navbar};
