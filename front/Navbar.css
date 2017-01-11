@@ -1,7 +1,7 @@
 .navMid{
   display: flex;
   justify-content:space-between;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #efefef;
   list-style: none;
   align-items: center;
   height: 80px;
@@ -16,6 +16,7 @@
 .navMid li:nth-child(1) a {
     color: black;
     margin-left: 200px;
+    font-family: 'Pacifico', cursive;
 }
 
 .navMid li:nth-child(2) a{
