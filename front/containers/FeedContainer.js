@@ -22,7 +22,6 @@ const FeedContainer = React.createClass({
 })
 
 const mapStateToProps = (state) => {
-  console.log(state.feed.posts)
   return {posts: state.feed.posts}
 }
 
