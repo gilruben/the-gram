@@ -3,9 +3,6 @@ const User = require('../models').user;
 const Post = require('../models').post;
 const Comment = require('../models').comment;
 
-//Create GET and POST route to retrieve and create comments
-//Create GET route to retrieve a specific post's comments
-//Create GET route to retrieve a specific user's comments
 
 const getAllComments = (req, res) => {
   Comment.findAll()
@@ -44,7 +41,12 @@ const getUserComments = (req, res) => {
 const getPostComments = (req, res) => {
   Post.findById(req.params.postId)
   .then((post) => {
-    return post.getComments()
+    return post.getComments({
+      include: {
+        model: User,
+        attributes: ['username']
+      }
+    })
   })
   .then((data) => {
     res.send(data)

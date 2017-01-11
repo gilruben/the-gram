@@ -4,4 +4,6 @@ import Routes from './routes/Routes.jsx';
 import Navbar from './navbar/Navbar.jsx';
 import "../dee.css";
 
+import '../App.css';
+
 export {Home, Login, Routes, Navbar};

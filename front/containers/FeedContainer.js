@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {getPostsAsync} from '../actions/feed-actions';
+import Post from '../components/post/Post';
 
 const FeedContainer = React.createClass({
   componentDidMount(){
@@ -9,10 +10,10 @@ const FeedContainer = React.createClass({
   },
   render(){
     return (
-      <ul>
+      <ul className='postUl'>
         {
           this.props.posts.map((post, indx) => {
-            return <li key={indx}>{post.caption}</li>
+            return <li key={indx} className='postList'> <Post post={post} /> </li>
           })
         }
       </ul>
@@ -21,7 +22,6 @@ const FeedContainer = React.createClass({
 })
 
 const mapStateToProps = (state) => {
-  console.log(state.feed.posts)
   return {posts: state.feed.posts}
 }
 
