@@ -22,7 +22,7 @@ const CommentContainer = React.createClass({
   render() {
     return (
       <div>
-        <ul>
+        <ul className='commentUl'>
           {
             this.state.commentList.map((comment, idx) => {
               return <li key={idx}><IndividualComment username={comment.user.username} comment={comment.comment} /></li>

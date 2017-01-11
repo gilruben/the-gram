@@ -45,3 +45,47 @@ body, html {
 
 }
 /*---------/Login--------*/
+
+
+
+/*---------Post--------*/
+.postBox {
+  width: 600px;
+}
+
+.postBox img {
+  /*height: 300px;*/
+  width: 600px;
+}
+
+.postList {
+    list-style: none;
+}
+
+.postUl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/*---------/Post--------*/
+
+
+/*---------Comment--------*/
+
+.commentUl {
+  list-style: none;
+  padding: 0;
+}
+
+.commenters {
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.commentBox{
+  display: flex;
+  align-items: center;
+
+}
+
+/*---------/Comment--------*/
