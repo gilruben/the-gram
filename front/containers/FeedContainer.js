@@ -10,10 +10,10 @@ const FeedContainer = React.createClass({
   },
   render(){
     return (
-      <ul>
+      <ul className='postUl'>
         {
           this.props.posts.map((post, indx) => {
-            return <li key={indx}> <Post post={post} /> </li>
+            return <li key={indx} className='postList'> <Post post={post} /> </li>
           })
         }
       </ul>

@@ -3,7 +3,7 @@ import React from 'react';
 import CommentContainer from '../../containers/CommentContainer';
 
 const Post = (props) => (
-	<div>
+	<div className="postBox">
 		<img src={props.post.img_path} />
 		<p>{props.post.caption}</p>
 		<CommentContainer id={props.post.id} />
