@@ -4,29 +4,32 @@ import {bindActionCreators} from 'redux';
 import {getPostsAsync} from '../actions/like-actions';
 
 const LikeContainer = React.createClass({
-  componentDidMount(){
-    this.props.getLikes()
+  getInitialState(){
+    return {likes: 0, wasLiked: false}
   },
+  componentDidMount(){
+    $.ajax({
+      url: '/api/likes',
+      type: 'GET'
+    })
+    .done((data) => {
+      this.setState({likes: data})
+    })
+  },
+  likePost(){
+    this.setState({likes: this.state.likes + 1, wasLiked: true});
+  },
+  unlikePost(){
+    this.setState({likes: this.state.likes - 1, wasLiked: false});
+  }
   render(){
     return (
-      <ul>
-        {
-          this.props.posts.likes.map((post, indx) => {
-            return <li key={indx}>{post.likes}</li>
-          })
-        }
-      </ul>
+      <div onClick={likePost}>
+        {this.state.likes}
+      </div>
+
     )
   }
 })
 
-const mapStateToProps = (state) => {
-  console.log(state.likes)
-  return {likes: state.likes}
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({getLikes: getLikesAsync}, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(LikeContainer);
+export default LikeContainer;
