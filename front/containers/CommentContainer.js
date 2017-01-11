@@ -14,7 +14,6 @@ const CommentContainer = React.createClass({
       type: 'GET'
     })
     .done((response) => {
-      console.log(response)
       this.setState({
         commentList: response
       })

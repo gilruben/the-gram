@@ -17,12 +17,13 @@ const Login = React.createClass({
     let loginMsg = this.props.loginMsg;
 
     return (
-      <div>
-        Username:
-        <input onChange={this.updateUserName} type="text"/>
-        Password:
-        <input onChange={this.updatePassword} type="text"/>
-        <button onClick={this.submitLoginInfo}>Submit</button>
+      <div className="loginDiv">
+        <h1>instagram</h1>
+        <div className="inputDiv">
+          <input onChange={this.updateUserName} placeholder="Username" type="text"/>
+          <input onChange={this.updatePassword} placeholder="Password" type="password"/>
+          <button onClick={this.submitLoginInfo}>Log in</button>
+        </div>
         <div>{loginMsg ? loginMsg : null}</div>
       </div>
     )
