@@ -41,6 +41,7 @@ const CommentContainer = React.createClass({
             })
           }
         </ul>
+        //{create comment component}
       </div>
     )
   }

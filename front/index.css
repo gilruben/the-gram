@@ -1,0 +1,24 @@
+/*---------Comment--------*/
+
+/*.commentUl {
+  list-style: none;
+  padding: 0;
+}
+
+.commenters {
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.commentBox{
+  display: flex;
+  align-items: center;
+
+}*/
+
+.posterName {
+	font-weight: 700;
+	font-size: 1.2em;
+}
+
+/*---------/Comment--------*/
