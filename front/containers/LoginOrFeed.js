@@ -9,7 +9,7 @@ import {loginAsync} from '../actions/login-actions';
 const LoginOrFeed = (props) => (
   (props.isVerified || props.params.username) ?
     <div>
-      <Navbar items={[{text: 'instagram', url: '/'}, {text: 'profile', url: '/profile'}]} />
+      <Navbar items={[{text: 'profile', url: '/profile'}, {text: 'create post', url: '/newpost'}]} />
       {props.children}
     </div> :
     <Login loginMsg={props.loginMsg} log_in={props.log_in} />
