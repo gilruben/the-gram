@@ -1,3 +1,5 @@
+const multer = require('multer');
+const upload = multer({dest: '../images'});
 const router = require('express').Router();
 const User = require('../models').user;
 const Post = require('../models').post;
@@ -21,15 +23,17 @@ const getAllPosts = (req, res) => {
 }
 
 const createPost = (req, res) => {
-	Post.create(req.body)
-	.then( (data) => {
-		console.log("SUCCESS! posted new photo")
-		res.send(data)
-	})
-	.catch( (err) => {
-		console.log("ERROR POSTING A NEW PHOTO:", err)
-		res.sendStatus(500)
-	})
+
+
+	// Post.create(req.body)
+	// .then( (data) => {
+	// 	console.log("SUCCESS! posted new photo")
+	// 	res.send(data)
+	// })
+	// .catch( (err) => {
+	// 	console.log("ERROR POSTING A NEW PHOTO:", err)
+	// 	res.sendStatus(500)
+	// })
 }
 
 const getUserPosts = (req, res) => {
