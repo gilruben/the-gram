@@ -1,6 +1,7 @@
 import React from 'react';
 import {ajax} from 'jquery';
 import IndividualComment from '../components/comment/IndividualComment';
+import CreateComment from '../components/comment/CreateComment';
 
 const CommentContainer = React.createClass({
   getInitialState() {
@@ -41,9 +42,11 @@ const CommentContainer = React.createClass({
             })
           }
         </ul>
+        <CreateComment />
       </div>
     )
   }
 })
+
 
 export default CommentContainer
