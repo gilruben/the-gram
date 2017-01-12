@@ -1,5 +1,6 @@
 import React from 'react';
 import FileInput from 'react-file-input';
+import $ from 'jquery';
 
 const NewPost = React.createClass({
   getInitialState(){
@@ -39,6 +40,22 @@ const NewPost = React.createClass({
     } else if(target === 'caption'){
       this.setState({caption: e.target.value});
     }
+  },
+  handleSubmit(e){
+    e.preventDefault();
+
+    let formData = new FormData()
+    formData.append('post', this.state.img, this.state.img.name);
+    formData.append('caption', this.state.caption);
+
+    $.ajax({
+      url: 'api/posts/',
+      type: 'POST',
+      cache: false,
+      contentType: false,
+      processData: false,
+      data: formData
+    })
   },
   handleClick(e){
     document.getElementsByClassName('image-chooser')[0].click()

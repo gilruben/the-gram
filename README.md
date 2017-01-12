@@ -12,6 +12,9 @@ file. Username should be your username for the database, database should be
 
 Change the fields for development, test, and production
 
+## Other Setup
+Create a folder called `images`, in the `back` folder
+
 ## Start
 First: `npm install`
 To start: `npm start`
