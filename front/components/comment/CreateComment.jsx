@@ -1,12 +1,17 @@
 import React from 'react';
+import commentLike from '../../icons/commentLike.png';
+import igSprites from '../../icons/igSprites.png';
 
-const CreateComment = (props) = (
+//show the input and button horizontal
+
+const CreateComment = (props) => (
   <div>
-    This is the Create comment component;
-    {/* <form>
-      <input type="input" placeholder="comment"></input>
-      <button type="submit"></button>
-    </form> show the input and button horizontal*/}
+    <div className='commentCreate'>
+    	<span className='igSpriteHeartOpen'>Like</span>
+	      <input className='commentInput' type="input" placeholder="Add a comment...">
+	      </input>
+	      <button type="submit">Send</button>
+    </div> 
 
   </div>
 )

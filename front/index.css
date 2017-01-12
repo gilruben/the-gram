@@ -1,24 +1,67 @@
 /*---------Comment--------*/
 
-/*.commentUl {
-  list-style: none;
-  padding: 0;
-}
-
-.commenters {
-  font-weight: 700;
-  margin-right: 10px;
-}
-
-.commentBox{
-  display: flex;
-  align-items: center;
-
-}*/
-
 .posterName {
 	font-weight: 700;
 	font-size: 1.2em;
 }
-
 /*---------/Comment--------*/
+
+
+/*---------Make Comment--------*/
+
+.igSpriteHeartOpen {
+	background-image: url(//instagramstatic-a.akamaihd.net/h1/sprites/core/e05e5e.png);
+	background-repeat: no-repeat;
+	background-position: -207px -229px;
+	display: block;
+	overflow: hidden;
+	text-indent: 110%;
+	white-space: nowrap;
+	height: 24px;
+	width: 24px;
+	margin-left: -9px;
+	margin-right: 3px;
+	border: none;
+}
+/*LIKED heart image
+background-position: -276px -180px;
+height and width 24px
+*/
+
+.igSpriteDots {
+	background-image: url(//instagramstatic-a.akamaihd.net/h1/sprites/core/e05e5e.png);
+	background-repeat: no-repeat;
+	background-position: -308px -37px;
+	background-color: transparent;
+	border: 0;
+	padding: 0;
+	display: block;
+	overflow: hidden;
+	text-indent: 110%;
+	white-space: nowrap;
+	height: 44px;
+	width: 44px;
+/*	margin-left: 5px;
+	margin-right: -10px;*/
+}
+
+.commentCreate {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border-top: 1px solid #EFEFEF;
+	justify-content: center;
+	flex-shrink: 0;
+	margin-top: 13px;
+	min-height: 68px;
+}
+
+.commentInput {
+	background: 0;
+	border: none;
+	color: #262626;
+	outline: none;
+	width: 80%;
+
+}
+/*---------/Make Comment--------*/

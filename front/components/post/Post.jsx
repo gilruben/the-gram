@@ -4,9 +4,11 @@ import CommentContainer from '../../containers/CommentContainer';
 
 const Post = (props) => (
 	<div className="postBox">
-		<p className='posterName'>{props.post.user.username}</p>
+		<p>{props.post.user.username}</p>
 		<img src={props.post.img_path} />
 		<CommentContainer id={props.post.id} poster={props.post.user.username} caption={props.post.caption}/>
+	<div className="addCommentBox">
+			</div>
 	</div>
 )
 
