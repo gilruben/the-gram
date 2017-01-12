@@ -14,6 +14,13 @@ app.use('/api', routes)
 //auth routes
 app.use('/auth', require('../routes/auth-router'));
 
+//return images from backend storage
+app.get('/image/:userId/:img', (req, res) => {
+	let userId = req.params.userId;
+	let img = req.params.img;
+
+  res.sendFile(path.join(__dirname, '../', `images/${userId}/${img}`));
+})
 
 //return our react app for all non-API routes
 app.get('/*', (req, res) => {
