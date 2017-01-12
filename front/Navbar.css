@@ -13,13 +13,25 @@
   text-decoration: none;
 }
 
-.navMid li:nth-child(1) a {
-    color: black;
+.navMid .brand a{
+    color: #262626;
     margin-left: 200px;
     font-family: 'Pacifico', cursive;
+    font-size: 2.5em;
 }
 
-.navMid li:nth-child(2) a{
+.navMid li{
     color: grey;
-    margin-right: 200px;
+    /*margin-right: 200px;*/
+}
+
+.navMid li a{
+    color: grey;
+}
+
+.navlist {
+  display: flex;
+  width: 250px;
+  justify-content: space-between;
+  margin-right: 200px;
 }

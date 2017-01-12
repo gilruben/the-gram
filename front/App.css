@@ -67,6 +67,10 @@ body, html {
   width: 600px;
 }
 
+.postBox p {
+  margin-left: 20px;
+}
+
 .postList {
     list-style: none;
 }
@@ -98,6 +102,7 @@ body, html {
 .commentBox{
   display: flex;
   align-items: center;
+  padding-left: 20px;
 }
 
 .commentBox p{
@@ -107,7 +112,5 @@ body, html {
 /*---------/Comment--------*/
 
 /*-----------Navbar--------*/
-.navMid li:nth-child(1) {
-  font-size: 2.5em;
-}
+
 /*-----------/Navbar--------*/
