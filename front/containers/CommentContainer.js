@@ -1,7 +1,6 @@
 import React from 'react';
 import {ajax} from 'jquery';
 import IndividualComment from '../components/comment/IndividualComment';
-import CreateComment from '../components/comment/CreateComment';
 
 const CommentContainer = React.createClass({
   getInitialState() {
@@ -21,7 +20,7 @@ const CommentContainer = React.createClass({
   render() {
     let poster = this.props.poster;
     let caption = this.props.caption;
-    
+
     let captionComment = (
       <li>
         <div className="commentBox">
@@ -35,18 +34,16 @@ const CommentContainer = React.createClass({
       <div>
         <ul className='commentUl'>
           {caption ? captionComment : null}
-          
+
           {
             this.state.commentList.map((comment, idx) => {
               return <li key={idx}><IndividualComment username={comment.user.username} comment={comment.comment} /></li>
             })
           }
         </ul>
-        <CreateComment />
       </div>
     )
   }
 })
-
 
 export default CommentContainer
