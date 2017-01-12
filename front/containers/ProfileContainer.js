@@ -10,13 +10,15 @@ const ProfileContainer = React.createClass({
   },
   render(){
     return (
-      <ul className='postUl'>
-        {
-          this.props.posts.map((post, indx) => {
-            return <li key={indx} className='postList'> <ProfilePost post={post} /> </li>
-          })
-        }
-      </ul>
+      <div className='postGridDiv'>
+        <ul className='postGrid'>
+          {
+            this.props.posts.map((post, indx) => {
+              return <li key={indx} className='postList'> <ProfilePost post={post} /> </li>
+            })
+          }
+        </ul>
+      </div>
     )
   }
 })

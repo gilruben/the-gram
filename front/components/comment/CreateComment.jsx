@@ -4,16 +4,34 @@ import igSprites from '../../icons/igSprites.png';
 
 //show the input and button horizontal
 
-const CreateComment = (props) => (
-  <div>
-    <div className='commentCreate'>
-    	<span className='igSpriteHeartOpen'>Like</span>
-	      <input className='commentInput' type="input" placeholder="Add a comment...">
-	      </input>
-	      <button type="submit">Send</button>
-    </div> 
+const CreateComment = React.createClass({
+	getInitialState() {
+		return {isLiked: false}
+	},
 
-  </div>
-)
+	handleClick(){
+		let isLiked = this.state.isLiked
+
+		this.setState({isLiked: isLiked ? false : true})
+	},
+
+	render(){
+	  return( 
+	    <div>
+		    <div className='commentCreate'>
+		    	{
+		    		this.state.isLiked ?
+		    		  <span onClick={this.handleClick} className='igSpriteHeartLike'>Like</span> :
+		    		  <span onClick={this.handleClick} className='igSpriteHeartOpen'>Like</span>
+		    	}
+
+			    <input className='commentInput' type="input" placeholder="Add a comment..." />
+			    <button className='commentSubmit' type="submit">Send</button>
+		    </div> 
+		  </div>
+		)
+	}
+ })
+
 
 export default CreateComment;
