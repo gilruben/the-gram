@@ -1,7 +1,7 @@
 import React from 'react';
 import {Provider} from 'react-redux';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
-import {Home} from '../index';
+import {Home, NewPost} from '../index';
 import LoginOrFeed from '../../containers/LoginOrFeed';
 import FeedContainer from '../../containers/FeedContainer';
 import store from '../../store/store';
@@ -12,6 +12,7 @@ const Routes = (props) => (
     <Router history={browserHistory}>
       <Route path='/' component={LoginOrFeed} onEnter={verifyUser}>
         <IndexRoute component={FeedContainer} />
+        <Route path='newpost' component={NewPost} />
       </Route>
     </Router>
   </Provider>
