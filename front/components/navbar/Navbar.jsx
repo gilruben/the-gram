@@ -3,7 +3,11 @@ import {Link} from 'react-router';
 
 const Navbar = (props) => (
        <ul className="navMid">
-         {props.items.map((item, index) => (<li key={index}><Link to={item.url}>{item.text}</Link></li>))}
+        <li className="brand"><Link to='/'>instagram</Link></li>
+        <li className="navList">
+          {props.items.map((item, index) => (<li key={index}><Link to={item.url}>{item.text}</Link></li>))}
+            <li><i className="fa fa-sign-out" aria-hidden="true"></i></li>
+        </li>
        </ul>
 );
 
