@@ -10,6 +10,12 @@ body, html {
   height: 100vh;
 }
 
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  background-color: #efefef;
+}
+
 .loginDiv {
   display: flex;
   flex-direction: column;

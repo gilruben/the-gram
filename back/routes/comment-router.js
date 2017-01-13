@@ -16,9 +16,23 @@ const getAllComments = (req, res) => {
 }
 
 const createComment = (req, res) => {
-  Comment.create(req.body)
+  let newComment = Object.assign({}, req.body, {userId: req.session.userId})
+  let commentId;
+
+  Comment.create(newComment)
   .then((data) => {
-    res.send(data)
+    commentId = data.id;
+
+    return Comment.findById(commentId,{
+      include: {
+        model: User,
+        attributes: ['username']
+      }
+    })
+
+  })
+  .then((comment) => {
+    res.send(comment);
   })
   .catch((err) => {
     res.sendStatus(500)
