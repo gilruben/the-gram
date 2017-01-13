@@ -6,8 +6,24 @@ const router = require('express').Router();
 const User = require('../models').user;
 const Post = require('../models').post;
 
-
 const getAllPosts = (req, res) => {
+	Post.findAll({
+		order: [['createdAt', 'DESC']],
+		include: [{
+			model: User,
+			attributes: ['username']
+		}]
+	})
+	.then((post) => {
+		res.send(post)
+	})
+	.catch((err) => {
+		console.log("ERROR GETTING ALL POSTS:", err)
+		res.sendStatus(500)
+	})
+}
+
+const getAllUserPosts = (req, res) => {
 	Post.findAll({
 		where: {userId: req.session.userId},
 		include: [{
@@ -98,6 +114,9 @@ router.use(upload.any())
 router.route('/')
 	.get(getAllPosts)
 	.post(createPost)
+
+router.route('/user')
+	.get(getAllUserPosts)
 
 //URL is /api/posts/userId
 router.route('/:userId')
