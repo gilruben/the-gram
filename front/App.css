@@ -6,14 +6,19 @@ body, html {
 
 /*---------Login--------*/
 .mainLogin {
-  background-color: #fafafa;
-  height: 100vh;
+  /*height: 100vh;*/
 }
 
 .loginContainer {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;;
+  align-items: center;
   background-color: #efefef;
+  height: 100vh;
+}
+
+.loginContainer img{
+  height: 850px;
 }
 
 .loginDiv {
@@ -45,6 +50,14 @@ body, html {
   font-family: 'Lato', sans-serif;
   font-weight: bold;
   font-size: .8em;
+}
+
+.inputDiv button:hover {
+  cursor: pointer;
+}
+
+.inputDiv button:focus {
+  outline: none;
 }
 
 .inputDiv input {
@@ -122,6 +135,29 @@ body, html {
 
 /*---------/Comment--------*/
 
-/*-----------Navbar--------*/
 
-/*-----------/Navbar--------*/
+
+/*---------New Post--------*/
+.uploadButton {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+.uploadButton:focus {
+  outline: none;
+}
+
+.changeButton:focus, .uploadButton:focus {
+  outline: none;
+}
+
+/*---------/New Post--------*/
+
+
+
+/*---------Navbar--------*/
+.fa-sign-out {
+  cursor: pointer;
+  font-size: 1.5em;
+}
+/*---------/Navbar--------*/

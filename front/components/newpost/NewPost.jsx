@@ -60,7 +60,7 @@ const NewPost = React.createClass({
     .done((data) => {
       var preview = document.getElementById('image-preview')
       preview.innerHTML = '';
-      
+
       this.setState({img: null, caption: ''})
     })
   },
@@ -82,13 +82,13 @@ const NewPost = React.createClass({
                 </div> : null
             }
           <div className= "submitButtons">
-          {
-            img ?
-              <button className="changeButton" type="button" onClick={this.handleClick}>Change Image</button> :
-              <button className="uploadButton" type="button" onClick={this.handleClick}>New Post</button>
-          }
-
-          {img ? <button className="postButton" type="submit">Post</button> : null}
+            {
+              img ?
+                <button className="changeButton" type="button" onClick={this.handleClick}>Change Image</button> :
+                <button className="uploadButton" type="button" onClick={this.handleClick}>New Post</button>
+            }
+            
+            {img ? <button className="postButton" type="submit">Post</button> : null}
           </div>
         </form>
       </div>
