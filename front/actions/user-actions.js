@@ -14,7 +14,7 @@ export const update_user_posts = (posts) => ({
 
 export const getUserPostsAsync = () => (dispatch) => {
   $.ajax({
-    url: '/api/posts',
+    url: '/api/posts/user',
     type: 'GET'
   })
   .done((data) => {
