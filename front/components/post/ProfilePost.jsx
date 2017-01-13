@@ -1,8 +1,7 @@
 import React from 'react';
 
 const GridPost = (props) => (
-	<div className="postBox">
-		<p className='posterName'>{props.post.user.username}</p>
+	<div className="profileImgDiv">
 		<img src={props.post.img_path} />
 	</div>
 )
