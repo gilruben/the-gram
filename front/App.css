@@ -158,5 +158,6 @@ body, html {
 /*---------Navbar--------*/
 .fa-sign-out {
   cursor: pointer;
+  font-size: 1.5em;
 }
 /*---------/Navbar--------*/

@@ -27,11 +27,12 @@
 
 .navMid li a{
     color: grey;
+    font-size: 1.5em;
 }
 
 .navlist {
   display: flex;
-  width: 250px;
+  width: 200px;
   justify-content: space-between;
   margin-right: 200px;
 }

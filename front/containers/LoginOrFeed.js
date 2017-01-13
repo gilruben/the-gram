@@ -9,7 +9,7 @@ import {loginAsync} from '../actions/login-actions';
 const LoginOrFeed = (props) => (
   (props.isVerified || props.params.username) ?
     <div>
-      <Navbar items={[{text: 'profile', url: '/profile', icon: '<i class="fa fa-user" aria-hidden="true"></i>'}, {text: 'create post', url: '/newpost', icon: '<i class="fa fa-plus" aria-hidden="true"></i>'}]} />
+      <Navbar items={[{text: 'profile', url: '/profile', icon: 'fa fa-user'}, {text: 'create post', url: '/newpost', icon: 'fa fa-plus'}]} />
       {props.children}
     </div> :
     <div className="loginContainer">
