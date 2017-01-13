@@ -17,9 +17,11 @@ const NewPost = React.createClass({
 
     var preview = document.getElementById('image-preview')
     preview.innerHTML = '';
+
     var img = document.createElement("img");
     img.className = "post-img";
     img.file = file;
+
     preview.appendChild(img);
 
     let reader = new FileReader();
@@ -75,21 +77,24 @@ const NewPost = React.createClass({
           <FileInput className="image-chooser" accept=".png,.gif,.jpg" onChange={this.handleChange.bind(this, 'img')} />
 
           <div id="image-preview"></div>
+
             {
               img ?
                 <div>
                   <textarea id="caption-input" placeholder="  Add Caption..." onChange={this.handleChange.bind(this, 'caption')} value={this.state.caption} />
                 </div> : null
             }
+
           <div className= "submitButtons">
             {
               img ?
                 <button className="changeButton" type="button" onClick={this.handleClick}>Change Image</button> :
                 <button className="uploadButton" type="button" onClick={this.handleClick}>New Post</button>
             }
-            
+
             {img ? <button className="postButton" type="submit">Post</button> : null}
           </div>
+
         </form>
       </div>
     )
