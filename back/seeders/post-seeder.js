@@ -10,12 +10,33 @@ module.exports = {
         userId: 1
       },
       {
+        img_path: 'https://s-media-cache-ak0.pinimg.com/564x/60/03/f4/6003f420d94a3bb2530a602ebfef7372.jpg',
+        caption: 'the spiders in my house made this just for me',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        userId: 3
+      },
+      {
+        img_path: 'http://www.gratisography.com/pictures/332_1.jpg',
+        caption: 'This friday night... it is getting LIT',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        userId: 2
+      },
+      {
         img_path: 'http://www.gratisography.com/pictures/353_1.jpg',
         caption: 'it is so LIT',
         createdAt: new Date(),
         updatedAt: new Date(),
         userId: 1
-      }, 
+      },
+      {
+        img_path: 'https://s-media-cache-ak0.pinimg.com/564x/23/ff/47/23ff4794449f41d7d2545ea4739345bc.jpg',
+        caption: 'I like coffee/ I like cake/ do not give me/ coffee cake',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        userId: 4
+      },
       {
         img_path: 'https://s-media-cache-ak0.pinimg.com/564x/f4/26/00/f42600bcd61f4d5a91f2388e8f9b75c5.jpg',
         caption: 'spaghetti night!',
@@ -31,11 +52,11 @@ module.exports = {
         userId: 2
       },
       {
-        img_path: 'http://www.gratisography.com/pictures/332_1.jpg',
-        caption: 'This friday night... it is getting LIT',
+        img_path: 'https://s-media-cache-ak0.pinimg.com/564x/ab/e0/82/abe082506289f4e10d784f6fa4b65edf.jpg',
+        caption: 'A piece of cake and a much needed drink...',
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 2
+        userId: 4
       },
       {
         img_path: 'http://www.colorlisa.com/pictures/149_1.jpg',
@@ -52,33 +73,12 @@ module.exports = {
         userId: 3
       },
       {
-        img_path: 'https://s-media-cache-ak0.pinimg.com/564x/60/03/f4/6003f420d94a3bb2530a602ebfef7372.jpg',
-        caption: 'the spiders in my house made this just for me',
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        userId: 3
-      },
-      {
         img_path: 'https://i0.wp.com/negativespace.co/wp-content/uploads/2015/10/0093.jpg',
         caption: 'All I see is cake frosting',
         createdAt: new Date(),
         updatedAt: new Date(),
         userId: 4
       },
-      {
-        img_path: 'https://s-media-cache-ak0.pinimg.com/564x/23/ff/47/23ff4794449f41d7d2545ea4739345bc.jpg',
-        caption: 'I like coffee/ I like cake/ do not give me/ coffee cake',
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        userId: 4
-      },  
-      {
-        img_path: 'https://s-media-cache-ak0.pinimg.com/564x/ab/e0/82/abe082506289f4e10d784f6fa4b65edf.jpg',
-        caption: 'A piece of cake and a much needed drink...',
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        userId: 4
-      }
     ])
   }
 }
