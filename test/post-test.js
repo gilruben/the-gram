@@ -43,7 +43,7 @@ describe('post-api-test', () => {
 
   //POST a photo!
   it(`'/api/posts' should post a new photo`, (done) => {
-    let newPost = {img_path: 'http://www.gratisography.com/pictures/368_1.jpg', caption: 'earth is dirt', userId: 2}
+    let newPost = {img_path: 'http://www.gratisography.com/pictures/368_1.jpg', caption: 'omnomnom', userId: 2}
     supertest(server)
       .post('/api/posts')
       .send(newPost)

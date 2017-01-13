@@ -4,7 +4,7 @@ module.exports = {
 
     return queryInterface.bulkInsert('users', [
       {
-        username: 'cmart',
+        username: 'champagnepapi',
         email: 'cmart@gmail.com',
         password: pw,
         bio: 'I\'m LIT!!!',
@@ -12,7 +12,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        username: 'lkang',
+        username: 'chunLisa',
         email: 'lkang@gmail.com',
         password: pw,
         bio: 'YASSSS, QUEEN, SLAAYY',
@@ -20,7 +20,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        username: 'dsterling',
+        username: 'thatgirl',
         email: 'dsterling@gmail.com',
         password: pw,
         bio: 'I\'m THAT girl',
@@ -28,7 +28,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        username: 'rgil',
+        username: 'rubensandwich',
         email: 'rgil@gmail.com',
         password: pw,
         bio: 'Lover of cake',
