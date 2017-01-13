@@ -84,6 +84,10 @@
 	border-left: 1px solid #FAFAFA;
 	color: #A9A9B4;
 }
+
+.commentSubmit:focus {
+	outline: none;
+}
 /*---------/Make Comment--------*/
 
 
