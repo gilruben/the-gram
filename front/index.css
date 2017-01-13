@@ -65,6 +65,11 @@
 	flex-shrink: 0;
 	margin-top: 13px;
 	min-height: 68px;
+	margin-bottom: 0;
+}
+
+.commentInput, .commentSubmit {
+	font-size: 1.3em;
 }
 
 .commentInput {
@@ -83,6 +88,10 @@
 	border: none;
 	border-left: 1px solid #FAFAFA;
 	color: #A9A9B4;
+}
+
+.commentSubmit:focus {
+	outline: none;
 }
 /*---------/Make Comment--------*/
 
