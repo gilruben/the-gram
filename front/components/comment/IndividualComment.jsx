@@ -2,8 +2,7 @@ import React from 'react';
 
 const IndividualComment = (props) => (
   <div className="commentBox">
-    <span className='commenters'>{props.username}</span>
-    <p>{props.comment}</p>
+    <p><span className='commenters'>{props.username}</span>{props.comment}</p>
   </div>
 )
 
