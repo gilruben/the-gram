@@ -26,6 +26,7 @@ const getAllPosts = (req, res) => {
 const getAllUserPosts = (req, res) => {
 	Post.findAll({
 		where: {userId: req.session.userId},
+		order: [['createdAt', 'DESC']],
 		include: [{
 			model: User,
 			attributes: ['username']
