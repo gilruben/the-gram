@@ -1,5 +1,6 @@
 import React from 'react';
 import FileInput from 'react-file-input';
+import $ from 'jquery';
 
 const NewPost = React.createClass({
   getInitialState(){
@@ -40,28 +41,48 @@ const NewPost = React.createClass({
       this.setState({caption: e.target.value});
     }
   },
+  handleSubmit(e){
+    e.preventDefault();
+
+    let formData = new FormData()
+    formData.append('post', this.state.img, this.state.img.name);
+    formData.append('caption', this.state.caption);
+
+    $.ajax({
+      url: 'api/posts/',
+      type: 'POST',
+      cache: false,
+      contentType: false,
+      processData: false,
+      data: formData
+    })
+  },
   handleClick(e){
     document.getElementsByClassName('image-chooser')[0].click()
 	},
   render(){
     let img = this.state.img
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
+      <div className="newPostPage">
+        <form className="newPostForm" onSubmit={this.handleSubmit}>
           <FileInput className="image-chooser" accept=".png,.gif,.jpg" onChange={this.handleChange.bind(this, 'img')} />
 
-          <button type="button" onClick={this.handleClick}>{img ? 'Change Image' : 'New Post'}</button>
-
           <div id="image-preview"></div>
-
+            {
+              img ?
+                <div>
+                  <textarea id="caption-input" placeholder="  Add Caption..." onChange={this.handleChange.bind(this, 'caption')}></textarea>
+                </div> : null
+            }
+          <div className= "submitButtons">
           {
             img ?
-              <div>
-                <textarea id="caption-input" onChange={this.handleChange.bind(this, 'caption')}></textarea>
-              </div> : null
+              <button className="changeButton" type="button" onClick={this.handleClick}>Change Image</button> :
+              <button className="uploadButton" type="button" onClick={this.handleClick}>New Post</button>
           }
 
-          {img ? <button type="submit">Create</button> : null}
+          {img ? <button className="postButton" type="submit">Post</button> : null}
+          </div>
         </form>
       </div>
     )
