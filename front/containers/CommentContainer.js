@@ -18,6 +18,20 @@ const CommentContainer = React.createClass({
       this.setState({commentList: response})
     })
   },
+  handleSubmit(comment) {
+
+    ajax({
+      url: 'api/comments/',
+      type: 'POST',
+      data: {comment: comment, postId: this.props.id}
+    })
+    .done((newComment) => {
+      let newList = this.state.commentList.slice();
+      newList.push(newComment);
+
+      this.setState({commentList: newList});
+    })
+  },
   render() {
     let poster = this.props.poster;
     let caption = this.props.caption;
@@ -38,11 +52,12 @@ const CommentContainer = React.createClass({
 
           {
             this.state.commentList.map((comment, idx) => {
+
               return <li key={idx}><IndividualComment username={comment.user.username} comment={comment.comment} /></li>
             })
           }
         </ul>
-        <CreateComment />
+        <CreateComment onSubmit={this.handleSubmit}/>
       </div>
     )
   }

@@ -12,7 +12,9 @@ const LoginOrFeed = (props) => (
       <Navbar items={[{text: 'profile', url: '/profile'}, {text: 'create post', url: '/newpost'}]} />
       {props.children}
     </div> :
-    <Login loginMsg={props.loginMsg} log_in={props.log_in} />
+    <div className="loginContainer">
+      <Login loginMsg={props.loginMsg} log_in={props.log_in} />
+    </div>
 )
 
 const mapStateToProps = (state) => {
