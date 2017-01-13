@@ -14,7 +14,7 @@ const LoginOrFeed = (props) => (
     </div> :
     <div className="loginContainer">
       <div>
-        <img src="https://lh6.googleusercontent.com/bIMHjQTnQy1wHccZEGeYGMh7AY6nVisaL-z94LCDeYsuoNPEa52zF2QehBSsSAwDf72DaqGp9BTESbU=w2400-h1854-rw" />
+        <img src="/image/igphone.png" />
       </div>
       <Login loginMsg={props.loginMsg} log_in={props.log_in} />
     </div>
