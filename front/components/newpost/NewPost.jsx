@@ -1,5 +1,6 @@
 import React from 'react';
 import FileInput from 'react-file-input';
+import {browserHistory} from 'react-router';
 import $ from 'jquery';
 
 const NewPost = React.createClass({
@@ -56,6 +57,12 @@ const NewPost = React.createClass({
       processData: false,
       data: formData
     })
+    .done((data) => {
+      var preview = document.getElementById('image-preview')
+      preview.innerHTML = '';
+      
+      this.setState({img: null, caption: ''})
+    })
   },
   handleClick(e){
     document.getElementsByClassName('image-chooser')[0].click()
@@ -71,7 +78,7 @@ const NewPost = React.createClass({
             {
               img ?
                 <div>
-                  <textarea id="caption-input" placeholder="  Add Caption..." onChange={this.handleChange.bind(this, 'caption')}></textarea>
+                  <textarea id="caption-input" placeholder="  Add Caption..." onChange={this.handleChange.bind(this, 'caption')} value={this.state.caption} />
                 </div> : null
             }
           <div className= "submitButtons">
