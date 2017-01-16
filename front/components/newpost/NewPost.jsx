@@ -33,8 +33,9 @@ const NewPost = React.createClass({
     reader.readAsDataURL(file);
   },
   handleChange(target, e){
-    if(target === 'img'){
-      let file = e.target.files[0]
+    let file = e.target.files[0]
+
+    if(target === 'img' && file){
 
       this.setState({img: file});
 
