@@ -1,7 +1,7 @@
 {
-  "name": "instagram-clone",
+  "name": "the-gram",
   "version": "0.1.0",
-  "description": "An instagram clone built with React, Node, Express, & Sequelize",
+  "description": "An instagram clone built with React, Node, Express, Sequelize, & PostgreSQL",
   "main": "start.js",
   "scripts": {
     "start": "webpack --watch & nodemon start.js",
