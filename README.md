@@ -1,5 +1,9 @@
 # Instagram Clone
 The Gram is an MVP for an Instagram clone built with React, Redux, Express, Sequelize, and PostgreSQL.
+
+login: rubensandwich
+password: password
+
 ## Database Setup
 In postgres, create a database called "instagram-clone"
 
