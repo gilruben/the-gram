@@ -1,5 +1,5 @@
 # Instagram Clone
-
+The Gram is an MVP for an Instagram clone built with React, Redux, Express, Sequelize, and PostgreSQL.
 ## Database Setup
 In postgres, create a database called "instagram-clone"
 
@@ -11,9 +11,6 @@ file. Username should be your username for the database, database should be
 "instagram-clone", and dialect should be "postgres".
 
 Change the fields for development, test, and production
-
-## Other Setup
-Create a folder called `images`, in the `back` folder
 
 ## Start
 First: `npm install`
